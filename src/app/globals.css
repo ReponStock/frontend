@@ -114,3 +114,22 @@ li {
   --val: 4.029999999999999vw;
   --max: 2rem;
 } */
+
+.flex{
+  display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.justify-between{
+  justify-content: space-between;
+}
+
+.mx-5{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
