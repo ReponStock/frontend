@@ -2,6 +2,7 @@ import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
 import styles from "./page.module.css";
 import Card from "@/components/card/Card";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
         buttonDescription='Leer más ...'
         imagePosition='left'
       />
+      <Footer />
     </div>
   );
 }
