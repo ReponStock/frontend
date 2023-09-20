@@ -31,7 +31,6 @@
   text-align: center;
 
   /* Semi-bold/18px */
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -41,7 +40,6 @@
 .heroTitle {
   color: var(--Blue, #13294e);
   text-align: center;
-  font-family: Inter;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
@@ -53,7 +51,6 @@
   color: var(--blue-800, #212939);
   text-align: center;
   
-  font-family: Inter;
   font-size: 21px;
   font-style: normal;
   font-weight: 400;

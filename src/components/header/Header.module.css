@@ -24,23 +24,20 @@
   align-items: center;
   padding: 8px 8px;
   color: rgb(0, 174, 255);
-  font-weight: bolder;
 }
 
 .navBar a {
   color: var(--Blue, #13294e);
   text-decoration: none;
 
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: 24px;
 }
 
 .headerLogin {
   text-decoration: none;
-
+  cursor: pointer;
   display: flex;
   width: 144px;
   padding: 12px 46.67px 13px 46px;
@@ -53,10 +50,8 @@
 
   color: #fff;
   text-align: center;
-  font-family: Inter;
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -97,14 +92,12 @@
 .logoCard .title {
   margin-bottom: 0.5rem;
   color: rgb(62, 105, 220);
-  font-weight: 600;
   font-size: 0.75em;
 }
 
 .logoCard .description {
   margin-bottom: 0.5rem;
   color: rgb(118, 118, 118);
-  font-weight: 600;
   font-size: 0.7em;
 }
 
@@ -132,7 +125,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-weight: 600;
     font-size: 0.8em;
     margin-right: 8px;
   }
