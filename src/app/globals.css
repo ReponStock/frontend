@@ -139,6 +139,10 @@ a{
   align-items: center;
 }
 
+.center-txt{
+  text-align: center;
+}
+
 .gap-10{
   gap: 1rem;
 }
@@ -153,4 +157,29 @@ a{
 .mx-5{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+.my-5{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-auto{
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.absolute{
+  position: absolute;
+} 
+
+.right-5 {
+  right: 0.5rem;
+}
+
+.top-5{
+  top: 0.5rem;
+}
+
+.pointer{
+  cursor: pointer;
 }

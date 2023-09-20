@@ -31,3 +31,33 @@
   background-color: var(--blue);
   color: var(--white)
 }
+
+.tutorial-section{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.tutorial-section-card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 24px;
+  height: fit-content;
+  box-sizing: content-box;
+  width: 320px;
+  background-color: var(--white);
+  padding: 3rem 1rem;
+}
+
+.card-buttons{
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap:15px;
+}
