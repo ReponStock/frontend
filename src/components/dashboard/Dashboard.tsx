@@ -23,30 +23,103 @@ export const Dashboard: React.FC<DashboardProps> = ({ children }) => {
         <div className="flex align-center gap-20">
           <Image src={mail} width="30" height="28" alt="Mail Logo" />
           <Image src={bell} width="25" height="25" alt="Notifications Logo" />
-          <Image src={circle} width="40" height="40" alt="Profile picture" />
+          <Image src={circle} width="40" height="25" alt="Profile picture" />
         </div>
       </nav>
       <div className="container">
         <aside className="lateral-navigation">
           <button className="dashboard-button">Dashboard</button>
           <div>
-            <div>
-              <p>analisis</p>
-              <button className="nav-button">Chat Bot</button>
+            <div style={{ marginBottom: "20px" }}>
+              <blockquote>ANALISIS</blockquote>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/cursor-click.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Chat Bot</button>
+              </div>
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <blockquote>CUENTAS</blockquote>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/user.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Empleados</button>
+              </div>
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <blockquote>INVENTARIO</blockquote>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/folder.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Archivos</button>
+              </div>
+
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/bell.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Alertas</button>
+              </div>
+
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/chart-square-bar.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Productos</button>
+              </div>
             </div>
             <div>
-              <p>Cuentas</p>
-              <button className="nav-button">Empleados</button>
-            </div>
-            <div>
-              <p>Inventario</p>
-              <button className="nav-button">Archivos</button>
-              <button className="nav-button">Alertas</button>
-              <button className="nav-button">Productos</button>
-            </div>
-            <div>
-              <button className="nav-button">Configuracion</button>
-              <button className="nav-button">Cerrar Sesion</button>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/cog.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Configuracion</button>
+              </div>
+
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
+                <Image
+                  src="/logout.png"
+                  width="25"
+                  height="25"
+                  alt="Restock Logo"
+                />
+                <button className="nav-button">Cerrar Sesion</button>
+              </div>
             </div>
           </div>
         </aside>

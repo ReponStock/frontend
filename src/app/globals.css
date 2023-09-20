@@ -57,6 +57,7 @@ p,
 button,
 a,
 li,
+blockquote,
 .h1,
 .h2,
 .h3,
@@ -99,8 +100,7 @@ h5,
   --max: 1.825rem
 }
 h6,
-.h6,
-blockquote  {
+.h6  {
   --min: 1.4rem;
   --val: 4.029999999999999vw;
   --max: 1.6rem;
@@ -114,12 +114,22 @@ button,
 li {
   --min: 1.2rem;
   --val: 4.029999999999999vw;
-  --max: 1.4rem;
+  --max: 1.8rem;
+  font-weight: medium;
 }
 a{
   color: var(--black);
   text-decoration: none;
 }
+
+blockquote{
+  --min: 1rem;
+  --val: 4.029999999999999vw;
+  --max: 2rem;
+  font-weight: medium;
+  color: #858786;
+}
+
 
 .flex{
   display: flex;
