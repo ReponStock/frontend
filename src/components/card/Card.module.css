@@ -48,20 +48,14 @@
   text-align: center;
 
   /* Bold/16px */
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
   line-height: 28px; /* 175% */
   letter-spacing: -0.2px;
 }
 
 .cardTitle {
   color: var(--Blue, #13294e);
-  font-family: Inter;
   font-size: 48px;
   font-style: normal;
-  font-weight: 700;
   line-height: 64px;
   letter-spacing: -4px;
 }
@@ -69,10 +63,8 @@
 .cardDescription {
   color: var(--blue-800, #212939);
 
-  font-family: Inter;
   font-size: 21px;
   font-style: normal;
-  font-weight: 400;
   line-height: 34px;
 
   margin: 34px 0px;

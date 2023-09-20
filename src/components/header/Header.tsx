@@ -1,9 +1,17 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 import React from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header: React.FC = () => {
+  const router = useRouter();
+  const NavigateLogin = () => {
+    router.push("/login");
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
@@ -16,7 +24,7 @@ const Header: React.FC = () => {
           <Link href='/precios'>Precios</Link>
           <Link href='/soporte'>Soporte</Link>
         </nav>
-        <Link className={styles.headerLogin} href='/login'>INGRESAR</Link>
+        <button className={styles.headerLogin} onClick={()=>NavigateLogin()}>INGRESAR</button>
       </div>
     </header>
   );
