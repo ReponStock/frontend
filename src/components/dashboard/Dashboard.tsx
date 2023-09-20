@@ -41,7 +41,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ children }) => {
                   height="25"
                   alt="Restock Logo"
                 />
-                <button className="nav-button">Chat Bot</button>
+                <button className="nav-button">
+                  Chat Bot</button>
               </div>
             </div>
             <div style={{ marginBottom: "20px" }}>
