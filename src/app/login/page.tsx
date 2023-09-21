@@ -1,12 +1,100 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState, ChangeEvent, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import './styles.css'
 
 export default function Login() {
   const signUpButtonRef = useRef<HTMLButtonElement | null>(null);
   const signInButtonRef = useRef<HTMLButtonElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+
+  const [signUpData, setSignUpData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+
+  const [signInData, setSignInData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleSignUpChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setSignUpData({ ...signUpData, [name]: value });
+  };
+
+  const handleSignInChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setSignInData({ ...signInData, [name]: value });
+  };
+
+  const handleSignUp = async (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const url = "https://uyflckmef2.execute-api.us-east-1.amazonaws.com/production/auth/signup";
+    console.log(signUpData);
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(signUpData)
+      });
+
+      if (response.ok) {
+        // Registro exitoso
+        console.log("Usuario registrado");
+
+        //Abrir modal o input nuevo para el código de verificación
+      } else {
+        // Manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario
+        console.error("Error en el registro");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
+  };
+
+  const handleSignIn = async (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const url = "https://uyflckmef2.execute-api.us-east-1.amazonaws.com/production/auth/signin";
+    console.log(JSON.stringify(signInData));
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(signInData)
+      });
+
+      console.log(response);
+      if (response.ok) {
+        // Inicio de sesión exitoso
+
+        //Gardado de tokens en localstorage
+        const data = await response.json();
+        const accessToken = data.accessToken;
+        const refreshToken = data.refreshToken;
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
+
+        console.log("Sesion iniciada");
+        router.push("/filesUpload");
+      } else {
+        // Manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario
+        console.error("Error en el registro");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
+  };
+
 
   useEffect(() => {
     const signUpButton = signUpButtonRef.current;
@@ -37,7 +125,7 @@ export default function Login() {
   return (
     <div className="container" ref={containerRef}>
       <div className="form-container sign-up-container">
-        <form action="#">
+      <form>
           <h1>Crear Cuenta</h1>
           <div className="social-container">
             <a href="#" className="social">
@@ -51,14 +139,32 @@ export default function Login() {
             </a>
           </div>
           <span>o utiliza tu correo electrónico para registrarte</span>
-          <input type="text" placeholder="Nombre" />
-          <input type="email" placeholder="Correo Electrónico" />
-          <input type="password" placeholder="Contraseña" />
-          <button>Registrarse</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            value={signUpData.name}
+            onChange={handleSignUpChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo Electrónico"
+            value={signUpData.email}
+            onChange={handleSignUpChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value={signUpData.password}
+            onChange={handleSignUpChange}
+          />
+          <button onClick={handleSignUp}>Registrarse</button>
         </form>
       </div>
       <div className="form-container sign-in-container">
-        <form action="#">
+        <form>
           <h1>Iniciar Sesión</h1>
           <div className="social-container">
             <a href="#" className="social">
@@ -72,10 +178,22 @@ export default function Login() {
             </a>
           </div>
           <span>o utiliza tu cuenta</span>
-          <input type="email" placeholder="Correo Electrónico" />
-          <input type="password" placeholder="Contraseña" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo Electrónico"
+            value={signInData.email}
+            onChange={handleSignInChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value={signInData.password}
+            onChange={handleSignInChange}
+          />
           <a href="#">¿Olvidaste tu contraseña?</a>
-          <button>Iniciar Sesión</button>
+          <button onClick={handleSignIn}>Iniciar Sesión</button>
         </form>
       </div>
       <div className="overlay-container">
