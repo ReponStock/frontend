@@ -7,7 +7,7 @@ describe("Footer", () => {
     render(<Footer />);
 
     // Verificar si el logo se renderiza correctamente
-    expect(screen.getByAltText("Footer Repon Logo")).toBeInTheDocument();
+    expect(screen.getByAltText("Repon Logo")).toBeInTheDocument();
 
     // Verificar si los enlaces de la barra de navegación se renderizan
     expect(screen.getByText("Contáctenos")).toBeInTheDocument();

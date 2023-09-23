@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       <hr />
       <div className={styles.footerContent}>
         <Link className={styles.footerLogo} href='/'>
-          <Image src='/repon/repon.svg' alt='Footer Repon Logo' width={144} height={70} />
+          <Image src='/repon/repon.svg' alt='Repon Logo' width={144} height={70} />
         </Link>
         <nav className={styles.navBar}>
           <Link href='/contacto'>Contáctenos</Link>
