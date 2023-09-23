@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <Link className={styles.headerLogo} href='/'>
-          <Image src='/repon/repon.svg' alt='Repon Logo' width={144} height={70} />
+          <Image src='/repon/repon.svg' alt='Header Repon Logo' width={144} height={70} />
         </Link>
         <nav className={styles.navBar}>
           <Link href='/contacto'>Contáctenos</Link>
